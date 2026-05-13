@@ -1,0 +1,61 @@
+:root {
+  /* Light theme (default) */
+  --paper: #f6f4ee;
+  --paper-2: #efebe0;
+  --surface: #fbf9f3;
+  --ink: #1c1a17;
+  --ink-2: #3f3b33;
+  --ink-3: #807b6e;
+  --ink-4: #b8b2a2;
+  --line: #e3dece;
+  --line-2: #d2cbb6;
+  --frame: #1c1a17;
+
+  --yellow: #c9a227;
+  --yellow-deep: #a48315;
+  --yellow-soft: #ead68c;
+  --yellow-tint: #f4ebc4;
+  --yellow-wash: #fbf5dc;
+
+  --danger: #b43a24;
+  --safe: #4a7a52;
+
+  /* Number colors */
+  --n1: #2e5aae;
+  --n2: #3b6e45;
+  --n3: #b43a24;
+  --n4: #6b4a9a;
+  --n5: #8a4a1f;
+  --n6: #2e6e7a;
+  --n7: #1c1a17;
+  --n8: #807b6e;
+}
+
+/* Dark theme — inverted color */
+[data-theme='dark'] {
+  --paper: #1a1815;
+  --paper-2: #232019;
+  --surface: #2a2620;
+  --ink: #f0ede3;
+  --ink-2: #c4bda9;
+  --ink-3: #807b6e;
+  --ink-4: #5c574c;
+  --line: #3a352b;
+  --line-2: #4a4438;
+  --frame: #f0ede3;
+
+  --yellow: #d9b637;
+  --yellow-deep: #e0bb3f;
+  --yellow-soft: #4a3f1a;
+  --yellow-tint: #5c4f1e;
+  --yellow-wash: #2f2814;
+
+  --n1: #6b9ee8;
+  --n2: #7bbf87;
+  --n3: #e07560;
+  --n4: #b295d8;
+  --n5: #c9956c;
+  --n6: #6baeb8;
+  --n7: #f0ede3;
+  --n8: #b8b2a2;
+}
