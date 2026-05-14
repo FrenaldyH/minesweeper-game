@@ -2,7 +2,7 @@
 
 Classic Minesweeper with a Spotify-inspired dark/light UI, built with React + TypeScript.
 
-**Live demo:** https://minesweeper-game-woad.vercel.app
+**Live demo:** https://minesweeper-game-frenaldy.vercel.app
 
 ---
 
@@ -18,13 +18,13 @@ Classic Minesweeper with a Spotify-inspired dark/light UI, built with React + Ty
 
 ## Tech Stack
 
-| | |
-|---|---|
-| Framework | React 19 + TypeScript |
-| Bundler | Vite |
-| Styling | Plain CSS with CSS custom properties |
-| Package manager | pnpm |
-| Deploy | Vercel |
+|                 |                                      |
+| --------------- | ------------------------------------ |
+| Framework       | React 19 + TypeScript                |
+| Bundler         | Vite                                 |
+| Styling         | Plain CSS with CSS custom properties |
+| Package manager | pnpm                                 |
+| Deploy          | Vercel                               |
 
 ## Getting Started
 
