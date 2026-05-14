@@ -1,6 +1,256 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Geist+Mono:wght@400;500;600;700&display=swap');
-@import './variables.css';
+@import './variabel.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+/* Mono utility */
+.mono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/*  Layout Shell  */
+.shell {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 12px;
+  min-height: 100vh;
+}
+
+.col-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+}
+
+/* ========== Home Screen ========== */
+.home-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.home-card {
+  background: var(--surface-1);
+  border-radius: 16px;
+  padding: 48px 56px 44px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  box-shadow: var(--sh-dialog);
+  text-align: center;
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.home-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 32px;
+  letter-spacing: 0.02em;
+}
+
+.home-modes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.home-mode-btn {
+  width: 100%;
+  height: 52px;
+  padding: 0 20px;
+  border-radius: 9999px;
+  background: var(--surface-2);
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.home-mode-btn:hover {
+  background: var(--surface-3);
+  transform: scale(1.02);
+}
+
+.home-mode-btn:active {
+  transform: scale(0.98);
+}
+
+.home-mode-lbl {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.home-mode-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.home-play-btn {
+  width: 100%;
+}
+
+/* Profile card */
+.home-profile {
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface-1);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: var(--sh-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.home-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.home-profile-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+
+.home-profile-role {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.home-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.home-social-link:hover {
+  background: var(--surface-2);
+  transform: translateX(4px);
+}
+
+.home-social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.home-social-link:hover .home-social-icon {
+  color: var(--green);
+  background: rgba(30, 215, 96, 0.12);
+}
+
+.home-social-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.home-social-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.home-social-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.home-social-handle {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }

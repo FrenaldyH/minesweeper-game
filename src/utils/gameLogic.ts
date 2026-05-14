@@ -97,7 +97,7 @@ export const floodReveal = (
 
         const rr = r + dr;
         const cc = c + dc;
-        if (isInBounds(rr, cc, size) && !newRevealed[rr][cc] && grid[rr][cc] !== 1) {
+        if (isInBounds(rr, cc, size) && !newRevealed[rr][cc] && grid[rr][cc] !== -1) {
           queue.push([rr, cc]);
         }
       }

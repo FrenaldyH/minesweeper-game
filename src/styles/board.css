@@ -1,0 +1,317 @@
+/* Stage / Cabinet */
+.stage {
+  background: var(--surface-1);
+  border-radius: 8px;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stage Header */
+.stage-head {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.stage-head-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stage-head h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.stage-head .sub {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.stage-head .sub b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Status Chip (green badge with LED) */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  background: rgba(30, 215, 96, 0.12);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.status-chip.lose {
+  background: rgba(243, 114, 127, 0.12);
+  color: var(--red);
+}
+
+.status-chip .led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.18);
+  animation: blink 1.6s infinite;
+}
+
+.status-chip.lose .led {
+  background: var(--red);
+  box-shadow: 0 0 0 3px rgba(243, 114, 127, 0.18);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Stage Body */
+.stage-body {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Progress bar row */
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.progress-row .name {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.progress {
+  flex: 1;
+  height: 4px;
+  background: var(--surface-3);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--green);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.progress-num {
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.progress-num span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Board Grid */
+.board-wrap {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 12px 0;
+}
+
+.board {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  background: var(--bg);
+  border-radius: 10px;
+  box-shadow: var(--sh-inset);
+}
+
+/* Cell base */
+.cell {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background: var(--surface-3);
+  color: var(--text);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  transition:
+    background 0.12s ease,
+    transform 0.08s ease;
+  position: relative;
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell:hover:not(.revealed):not(.flag) {
+  background: var(--surface-4);
+}
+
+.cell:active:not(.revealed) {
+  transform: scale(0.94);
+}
+
+.cell.revealed {
+  background: var(--surface-1);
+  cursor: default;
+  box-shadow: inset 0 0 0 1px var(--border-soft);
+}
+
+.cell.revealed.empty {
+  color: transparent;
+}
+
+/* Flag state — green glow */
+.cell.flag {
+  background: rgba(30, 215, 96, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(30, 215, 96, 0.35);
+}
+
+.cell.flag .flag-ico {
+  color: var(--green);
+  width: 16px;
+  height: 16px;
+}
+
+/* Mine state — red */
+.cell.mine {
+  background: rgba(243, 114, 127, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(243, 114, 127, 0.35);
+}
+
+.cell.mine .mine-ico {
+  color: var(--red);
+  width: 16px;
+  height: 16px;
+}
+
+.cell.mine.exploded {
+  background: var(--red);
+}
+
+.cell.mine.exploded .mine-ico {
+  color: #1a0608;
+}
+
+/* Number colors */
+.n-1 {
+  color: var(--n1);
+}
+.n-2 {
+  color: var(--n2);
+}
+.n-3 {
+  color: var(--n3);
+}
+.n-4 {
+  color: var(--n4);
+}
+.n-5 {
+  color: var(--n5);
+}
+.n-6 {
+  color: var(--n6);
+}
+.n-7 {
+  color: var(--n7);
+}
+.n-8 {
+  color: var(--n8);
+}
+
+/* Difficulty sizing — Medium */
+.board.med .cell {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.board.med .cell .flag-ico,
+.board.med .cell .mine-ico {
+  width: 14px;
+  height: 14px;
+}
+
+/* Difficulty sizing — Hard */
+.board.hard .cell {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.board.hard .cell .flag-ico,
+.board.hard .cell .mine-ico {
+  width: 11px;
+  height: 11px;
+}
+
+/* Stage Footer */
+.stage-foot {
+  padding: 14px 24px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.stage-foot .right {
+  display: flex;
+  gap: 22px;
+}
+
+.stage-foot .pair b {
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-left: 6px;
+}

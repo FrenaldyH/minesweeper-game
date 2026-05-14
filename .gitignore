@@ -27,6 +27,15 @@ dist-ssr
 # env
 .env
 
-# Catatan
-MINESWEEPER*
-Referensi*
+# Refernsi
+Referensi/*
+
+# gitignore
+.gitignore
+
+# Preferences
+pref.txt
+
+# Node modules
+node_modules/
+

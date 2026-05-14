@@ -1,61 +1,67 @@
 :root {
-  /* Light theme (default) */
-  --paper: #f6f4ee;
-  --paper-2: #efebe0;
-  --surface: #fbf9f3;
-  --ink: #1c1a17;
-  --ink-2: #3f3b33;
-  --ink-3: #807b6e;
-  --ink-4: #b8b2a2;
-  --line: #e3dece;
-  --line-2: #d2cbb6;
-  --frame: #1c1a17;
+  /* Surfaces — dark mode (default) */
+  --bg: #121212;
+  --surface-1: #181818;  /* revealed cells, cards */
+  --surface-2: #222222;  /* sidebar buttons, scoreboard */
+  --surface-3: #2e2e2e;  /* unrevealed cells */
+  --surface-4: #3a3a3a;  /* unrevealed cells hover */
 
-  --yellow: #c9a227;
-  --yellow-deep: #a48315;
-  --yellow-soft: #ead68c;
-  --yellow-tint: #f4ebc4;
-  --yellow-wash: #fbf5dc;
+  /* Text */
+  --text: #ffffff;
+  --text-soft: #cbcbcb;
+  --text-muted: #b3b3b3;
+  --text-dim: #7c7c7c;
 
-  --danger: #b43a24;
-  --safe: #4a7a52;
+  /* Borders */
+  --border: #4d4d4d;
+  --border-soft: #2a2a2a;
 
-  /* Number colors */
-  --n1: #2e5aae;
-  --n2: #3b6e45;
-  --n3: #b43a24;
-  --n4: #6b4a9a;
-  --n5: #8a4a1f;
-  --n6: #2e6e7a;
-  --n7: #1c1a17;
-  --n8: #807b6e;
+  /* Brand (Spotify green) */
+  --green: #1ed760;
+  --green-2: #1db954;
+  --green-hi: #25e36b;
+
+  /* Semantic */
+  --red: #f3727f;
+  --orange: #ffa42b;
+  --blue: #539df5;
+
+  /* Cell number colors (1-8) */
+  --n1: #539df5;
+  --n2: #1ed760;
+  --n3: #f3727f;
+  --n4: #b794f4;
+  --n5: #ffa42b;
+  --n6: #4dd0e1;
+  --n7: #ffffff;
+  --n8: #b3b3b3;
+
+  /* Shadows */
+  --sh-card: rgba(0, 0, 0, 0.3) 0px 8px 8px;
+  --sh-dialog: rgba(0, 0, 0, 0.5) 0px 8px 24px;
+  --sh-inset: inset 0 0 0 1px #2a2a2a, inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
 
-/* Dark theme — inverted color */
-[data-theme='dark'] {
-  --paper: #1a1815;
-  --paper-2: #232019;
-  --surface: #2a2620;
-  --ink: #f0ede3;
-  --ink-2: #c4bda9;
-  --ink-3: #807b6e;
-  --ink-4: #5c574c;
-  --line: #3a352b;
-  --line-2: #4a4438;
-  --frame: #f0ede3;
+/* Light mode overrides */
+[data-theme='light'] {
+  --bg: #b8b8b6;        /* board gap & page bg — cukup gelap agar grid terlihat */
+  --surface-1: #ffffff; /* revealed cells, cards */
+  --surface-2: #f0f0ee; /* sidebar buttons, scoreboard */
+  --surface-3: #cecece; /* unrevealed cells — jelas lebih gelap dari revealed */
+  --surface-4: #d8d8d6; /* unrevealed cells hover */
 
-  --yellow: #d9b637;
-  --yellow-deep: #e0bb3f;
-  --yellow-soft: #4a3f1a;
-  --yellow-tint: #5c4f1e;
-  --yellow-wash: #2f2814;
+  --text: #121212;
+  --text-soft: #333333;
+  --text-muted: #5a5a5a;
+  --text-dim: #909090;
 
-  --n1: #6b9ee8;
-  --n2: #7bbf87;
-  --n3: #e07560;
-  --n4: #b295d8;
-  --n5: #c9956c;
-  --n6: #6baeb8;
-  --n7: #f0ede3;
-  --n8: #b8b2a2;
+  --border: #b3b3b3;
+  --border-soft: #d4d4d2;
+
+  --n7: #333333;
+  --n8: #5a5a5a;
+
+  --sh-card: rgba(0, 0, 0, 0.1) 0px 8px 8px;
+  --sh-dialog: rgba(0, 0, 0, 0.18) 0px 8px 24px;
+  --sh-inset: inset 0 0 0 1px #b8b8b6, inset 0 1px 0 rgba(0, 0, 0, 0.01);
 }
